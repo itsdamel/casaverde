@@ -1,13 +1,17 @@
 import sgMail from '@sendgrid/mail'; 
 import express from "express";
 import ViteExpress from "vite-express";
+import dotenv from 'dotenv'
 import cors from 'cors';
 
+dotenv.config()
+let apiKey = import.meta.env.VITE_API_KEY;
+sgMail.setApiKey(apiKey) 
 
 const app = express();
 app.use(cors());
 
-sgMail.setApiKey('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');/*  import.meta.env.VITE_REACT_API_KEY; */
+
 
 app.get('/', ( res ) => {
   res.send('Welcome to the sendgrid email server')
