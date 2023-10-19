@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import validator from "validator"; 
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
     max-width: 580px;
     height: 65px;
     display: flex;
@@ -30,7 +31,7 @@ const Wrapper = styled.div`
         cursor: pointer;
         padding: 20px;
         background-color: #FFCB47;
-        color: #FFF;
+        color: #202020;
         
     }
 
@@ -39,11 +40,29 @@ const Wrapper = styled.div`
     }
     
 `;
+export default function Newsletter(){
+    
+    const handleValidEmail = async (e) => {
 
-export default function NewsLetter(){
+        let email = e.target.email.value.trim()
+
+        e.preventDefault()
+
+        if(validator.isEmail(email)){
+
+            let resolution = await fetch(`http://localhost:3000/send-email?recipient=${email}`).catch(err => console.log(err)) 
+            console.log(resolution)
+        }else if(!validator.isEmail(email)){
+            console.log('not valid')
+        }
+        
+    }
     return(
-        <Wrapper>
-            <img src='assets/email-icon.svg'></img><input type="email" placeholder="Insira seu e-mail"></input><button>Assinar newsletter</button>
-        </Wrapper>
+            <Wrapper onSubmit={handleValidEmail}>
+                <img src='assets/email-icon.svg'></img><input type="text" name='email' placeholder="Insira seu e-mail"></input><button type='submit'>Assinar newsletter</button>
+            </Wrapper>
     )
 }
+
+   
+ 

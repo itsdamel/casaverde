@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const HeroSec = styled.section`
     align-items: center;
+    position: relative;
     height: 100vh;
     display: flex;
     padding-left: 100px;
@@ -32,15 +33,15 @@ const Cursive = styled.p`
 const BigPlant = styled.img`
     z-index: 1;
     position: absolute;
-    max-width: 500px;
-    max-height: 900px;
-    bottom: -200px;
-    right: 100px
+    max-width: 40%;
+    max-height: 130%;
+    top: 8%;
+    right: 10%;
 `
 const Oracle = styled.img`
     position: absolute;
     top: -250px;
-    right: -100px;
+    right: -300px;
     transform: rotate(20.536deg);
 `;
 export default function Hero(){
