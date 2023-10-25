@@ -7,7 +7,7 @@ import { HowCard, FlexDivWrapper } from "./style";
 export default function HowTo(){
     return(
         <BaseSection>
-            <HowCard>
+            <HowCard id="HowTo">
                 <CardImg backgroundpath='assets/plantCard.png'>
                 </CardImg>
                 <CardInformation>

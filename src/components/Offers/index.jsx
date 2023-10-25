@@ -10,7 +10,7 @@ export default function Offers(){
  
     useEffect(()=>{
         const getPlants = async() =>{
-            let response = await fetch('https://gist.githubusercontent.com/bugan/41d60ffa23fa0c4044cc138bf670780d/raw')
+            let response = await fetch('http://localhost:3333/plants')
             let responseJson = await response.json()
             setPlants(responseJson)
         }
@@ -19,13 +19,13 @@ export default function Offers(){
     }, [])
 
     return(
-        <BaseSection>
+        <BaseSection id="Offers">
             <OffersHeader>
                 <Paragraph>conheça nossas</Paragraph>
                 <Cursive >ofertas</Cursive>
             </OffersHeader>
             <OfferContent>
-                {plants.map((plant) => <PlantCard key={plants.indexOf(plant)} name={plant.name} image={`assets/${plant.img}.png`} price={plant.preco}/>)}
+                {plants.map((plant) => <PlantCard key={plants.indexOf(plant)} name={plant.name} image={`assets/${plant.img}.png`} price={plant.price + ',00'}/>)}
             </OfferContent>
         </BaseSection>
     )

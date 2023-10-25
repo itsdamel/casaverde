@@ -8,9 +8,9 @@ export default function Menu(){
                 
             </Logo>
             <Nav>
-                <a href='#'>Como fazer</a> 
+                <a href='#HowTo'>Como fazer</a> 
                 <span> / </span>
-                <a href='#'>Ofertas</a> 
+                <a href='#Offers'>Ofertas</a> 
                 <span> / </span>
                 <a href='#'>Meu carrinho</a> 
             </Nav>

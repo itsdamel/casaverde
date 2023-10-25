@@ -53,8 +53,8 @@ const Oracle = styled.img`
        right: -30%;
     }
     @media(max-width: 420px){
-       top: -28%;
-       
+       top: -16%;
+       transform: rotate(-24deg)
     }
    
 `;
