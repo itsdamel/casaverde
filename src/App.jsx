@@ -8,7 +8,7 @@ import './App.css'
 import {useState} from 'react';
 
 
-function App() {
+export default function App() {
   const [cartVisibility, setCartVisibility]= useState(false)
   const [cartItems, setCartItems] = useState([])
 
@@ -18,17 +18,19 @@ function App() {
         let newCart = [...cartItems, item]
         setCartItems(newCart)
       }
-      
-
-      
   }
 
   const removeFromCart = (product) =>{
     product.inShoppingCart = false;
     let newCart = cartItems.filter((item) => item.id != product.id)
     setCartItems(newCart)
-   
+    console.log(cartItems)
     
+  }
+
+  const cleanShoppingCart = () =>{
+    cartItems.forEach((item) => item.inShoppingCart = false)
+    setCartItems([])
   }
   const closeCart =() =>{
     setCartVisibility(false)
@@ -40,7 +42,7 @@ function App() {
 
   return (
     <>
-      {cartVisibility&&<ShoppingCart removeFromCart={removeFromCart} closeCart={closeCart} cartItems={cartItems}/>}
+      {cartVisibility&&<ShoppingCart clean={cleanShoppingCart} remove={removeFromCart} close={closeCart} cartItems={cartItems}/>}
       <HomePage cartVisibility={cartVisibility}>
         <Menu displayCart={displayCart}/>
     
@@ -53,4 +55,4 @@ function App() {
   )
 }
 
-export default App
+

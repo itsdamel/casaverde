@@ -2,10 +2,10 @@ import { CartCardDiv, CartCardHeader, SmallPlantName, SmallPlantPrice, RemoveBut
 import { CardHeader} from "../../shared/card";
 import { OfferInformation, OfferImg} from "../PlantCard/style";
 
-export function CartCard({product, removeFromCart}){
+export function CartCard({product, remove}){
 
     const handleRemove =() =>{
-        removeFromCart(product)
+        remove(product)
     }
     return(
        <CartCardDiv>
