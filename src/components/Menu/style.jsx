@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 const Header = styled.header`
     display: flex;
-    position: relative;
+    position: static;
     z-index: 2;
     margin-bottom: 20px;
     justify-content: space-between;
     width: 80vw;
     height: fit-content;
-    align-items: flex-end;
+    align-items: center;
 
     @media screen and (max-width:640px){
         flex-direction: column;

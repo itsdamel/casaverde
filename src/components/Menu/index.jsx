@@ -1,6 +1,8 @@
 import { Header, Logo, Nav } from './style.jsx';
 
-export default function Menu(){
+export default function Menu({displayCart}){
+    
+
     return(
         <Header>
             <Logo>
@@ -12,8 +14,9 @@ export default function Menu(){
                 <span> / </span>
                 <a href='#Offers'>Ofertas</a> 
                 <span> / </span>
-                <a href='#'>Meu carrinho</a> 
+                <a href='#' onClick={displayCart}>Meu carrinho</a> 
             </Nav>
+            
         </Header>
     )
 }

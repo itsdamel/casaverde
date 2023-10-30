@@ -1,17 +1,26 @@
 import {OfferCard, OfferImg, OfferInformation, PlantPrice, BuyButton, PlantName} from './style';
 
-export default function PlantCard({name, image, price}){
+export default function PlantCard({plant, addToCart, displayCart}){
+
+    const handleCart =()=>{
+        addToCart(plant)
+        displayCart()
+    }
+     
     return(
         <OfferCard>
 
-            <OfferImg backgroundpath={image}></OfferImg>
+            <OfferImg backgroundpath={'assets/' + plant.img}>
+
+
+            </OfferImg>
 
             <OfferInformation>
                
-                <PlantName>{name}</PlantName>
-                <PlantPrice >R${price}</PlantPrice>
+                <PlantName>{plant.name}</PlantName>
+                <PlantPrice >R${plant.price},00</PlantPrice>
             
-                <BuyButton>Comprar <img src='assets/yellow-arrow.svg'></img></BuyButton>
+                <BuyButton onClick={handleCart}>Comprar <img src='assets/yellow-arrow.svg'></img></BuyButton>
             </OfferInformation>
            
         </OfferCard>
