@@ -2,10 +2,11 @@ import NewsLetter from "../NewsLetter";
 import { HeroSection, BigPlant, ContentDiv, Oracle } from './style.jsx';
 import { Paragraph } from "../../shared/paragraph";
 import { Cursive } from "../../shared/cursive";
-
+import { ToastContainer } from "react-toastify";
 export default function Hero(){
     return(
         <HeroSection>
+            <ToastContainer containerId={'newsletterAlert'} role="alert"  />
             <ContentDiv>
                 <Paragraph> Sua casa com as</Paragraph>
                 <Cursive >melhores plantas</Cursive>

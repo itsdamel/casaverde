@@ -1,23 +1,27 @@
-import Menu from './components/Menu'
-import Hero from './components/Hero'
-import HowTo from './components/HowTo'
-import Offers from './components/Offers'
-import ShoppingCart from './components/ShoppingCart'
-import { HomePage } from './HomePage.style'
+import Menu from './components/Menu';
+import Hero from './components/Hero';
+import HowTo from './components/HowTo';
+import Offers from './components/Offers';
+import ShoppingCart from './components/ShoppingCart';
+import { HomePage } from './HomePage.style';
 import './App.css'
 import {useState} from 'react';
-
+//Toastify lib 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
   const [cartVisibility, setCartVisibility]= useState(false)
   const [cartItems, setCartItems] = useState([])
 
   const addToCart = (item) =>{
-      if (!item.inShoppingCart){
-        item.inShoppingCart = true;
-        let newCart = [...cartItems, item]
-        setCartItems(newCart)
-      }
+      
+    if (!item.inShoppingCart){
+      toast.info(`${item.name} foi adicionada ao carrinho!`,{containerId: 'addToCart'})
+      item.inShoppingCart = true;
+      let newCart = [...cartItems, item]
+      setCartItems(newCart)
+    }
   }
 
   const removeFromCart = (product) =>{
@@ -49,10 +53,12 @@ export default function App() {
         <Hero />
         <HowTo />
         <Offers displayCart={displayCart} addToCart={addToCart}/>
+  
       </HomePage>
     </>
 
   )
 }
+
 
 

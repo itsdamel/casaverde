@@ -3,7 +3,6 @@ import { CardHeader} from "../../shared/card";
 import { OfferInformation, OfferImg} from "../PlantCard/style";
 
 export function CartCard({product, remove}){
-
     const handleRemove =() =>{
         remove(product)
     }

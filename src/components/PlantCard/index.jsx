@@ -1,11 +1,8 @@
 import {OfferCard, OfferImg, OfferInformation, PlantPrice, BuyButton, PlantName} from './style';
 
-export default function PlantCard({plant, addToCart, displayCart}){
-
-    const handleCart =()=>{
-        addToCart(plant)
-        displayCart()
-    }
+export default function PlantCard({plant, addToCart}){
+  
+    const handleCart = () => addToCart(plant);
      
     return(
         <OfferCard>
