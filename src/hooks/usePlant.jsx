@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 
 export const usePlant = () => {
-    function Plant(id, name, price, img, inStock){
-        this.id = id
-        this.name = name
-        this.price = price
-        this.img = img
-        this.inStock = inStock
-        this.inShoppingCart = false;
+    class ProductPlant { 
+        constructor(id, name, price, img, inStock)
+        { 
+            this.id = id
+            this.name = name
+            this.price = price
+            this.img = img
+            this.inStock = inStock
+            this.inShoppingCart = this.quantity > 0 ? true : false
+            this.quantityInCart = 0;
+        }
+       
+    
+        
     }
-
     function createPlantObject(plant){
-        return new Plant(plant.id, plant.name, plant.price, plant.img, plant.inStock)
+        return new ProductPlant(plant.id, plant.name, plant.price, plant.img, plant.inStock)
     }
 
     const [plants, setPlants] = useState([])

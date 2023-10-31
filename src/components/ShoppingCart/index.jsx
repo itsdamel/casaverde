@@ -3,13 +3,18 @@ import { CartCard } from "../CartCard";
 import { useState, useEffect } from "react";
 
 export default function ShoppingCart({cartItems, close, clean, remove}){
-    let toRender = cartItems.map((item) => <CartCard remove={remove} key={item.id} product={item}/>)
-
-
     const [total, setTotal] = useState(0) //Couldn't make it a hook, have to use react context to share cartItems
-    useEffect(()=>{
-        setTotal(cartItems.reduce((total, item)=> total += item.price, 0))
-    }, [cartItems])
+    const handleTotal = () =>{
+        setTotal(cartItems.reduce((counter, item) => counter += (item.price * item.quantityInCart), 0)
+        )
+    }
+    let toRender = cartItems.map((item) => <CartCard handleTotal={handleTotal} cartItems={cartItems} remove={remove} key={item.id} product={item}/>)
+
+    
+   useEffect(()=>{
+        setTotal(cartItems.reduce((counter, item) => counter += (item.price * item.quantityInCart), 0)
+        )
+    }, [cartItems]) 
         
   
     return(

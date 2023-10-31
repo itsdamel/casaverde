@@ -15,25 +15,28 @@ export default function App() {
   const [cartItems, setCartItems] = useState([])
 
   const addToCart = (item) =>{
-      
     if (!item.inShoppingCart){
-      toast.info(`${item.name} foi adicionada ao carrinho!`,{containerId: 'addToCart'})
-      item.inShoppingCart = true;
-      let newCart = [...cartItems, item]
-      setCartItems(newCart)
+        item.inShoppingCart = true;
+        let newCart = [...cartItems, item]
+        setCartItems(newCart)
     }
+    item.quantityInCart += 1;
+    toast.info(`${item.name} foi adicionada ao carrinho!`,{containerId: 'addToCart'})
+    
+    setCartVisibility(true)
   }
 
   const removeFromCart = (product) =>{
     product.inShoppingCart = false;
     let newCart = cartItems.filter((item) => item.id != product.id)
     setCartItems(newCart)
-    console.log(cartItems)
-    
   }
 
   const cleanShoppingCart = () =>{
-    cartItems.forEach((item) => item.inShoppingCart = false)
+    cartItems.forEach((item) => {
+      item.inShoppingCart = false
+      item.quantityInCart = 0;
+    })
     setCartItems([])
   }
   const closeCart =() =>{

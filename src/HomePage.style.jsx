@@ -5,7 +5,8 @@ export const HomePage = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: #ffffffc5;
-    ${(props) => props.cartVisibility && 'filter: blur(5px); ' };
+    ${(props) => props.cartVisibility && 'filter: blur(5px) brightness(45%); ' };
+
     
 `
 

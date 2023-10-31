@@ -9,7 +9,7 @@ export const CartDiv = styled.div`
     flex-direction: column;
     right: 0;
     height: 100vh;
-    width: 40vw;
+    width: 60vw;
     align-items: center;
     justify-content: space-between;
     background-color: #F9FFFC;
