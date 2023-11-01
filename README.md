@@ -1,4 +1,5 @@
 
+
 <div style="text-align: center">
     <h1>Casa Verde ecommerce</h1>
     <div ><a href='./README.pt-br.md' style='cursor: pointer'>PT - README</a> || <a href='./README.es.md'style='cursor: pointer'>ES - README</a></div>
@@ -61,3 +62,4 @@
     <p>If you've read this far, thank you for your interest and patience! I genuinely hope you have an amazing day :)</p>
 
 </div>
+>>>>>>>>> Temporary merge branch 2
