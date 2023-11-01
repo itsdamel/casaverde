@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Header = styled.header`
     display: flex;
-    position: static;
+    position: relative;
     z-index: 2;
     margin-bottom: 20px;
     justify-content: space-between;
@@ -34,6 +34,7 @@ const Nav = styled.nav`
     text-decoration: none;
     display: flex;
     gap: 10px;
+    
    
     a{
         text-decoration: none;

@@ -1,5 +1,5 @@
-import validator from "validator"; 
-import { StyledNewsletter } from "./style";
+import validator from 'validator'; 
+import { StyledNewsletter } from './style';
 import {toast} from 'react-toastify'
 export default function Newsletter(){
     

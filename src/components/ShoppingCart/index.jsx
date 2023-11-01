@@ -1,27 +1,22 @@
-import { CartDiv, CartHeader, CloseButton, CartContent, CartFooter } from "./style"
-import { CartCard } from "../CartCard";
-import { useState, useEffect } from "react";
+import { CartDiv, CartHeader, CloseButton, CartContent, CartFooter } from './style'
+import { CartCard } from '../CartCard';
+import { useContext } from 'react';
+import useTotal from '../../hooks/useTotal';
+import CartContext from '../../context/cartContext';
 
-export default function ShoppingCart({cartItems, close, clean, remove}){
-    const [total, setTotal] = useState(0) //Couldn't make it a hook, have to use react context to share cartItems
+export default function ShoppingCart(){
+    const { closeCart, cartItems, cleanShoppingCart } = useContext(CartContext)
+    let total = useTotal();
     const handleTotal = () =>{
         setTotal(cartItems.reduce((counter, item) => counter += (item.price * item.quantityInCart), 0)
         )
     }
-    let toRender = cartItems.map((item) => <CartCard handleTotal={handleTotal} cartItems={cartItems} remove={remove} key={item.id} product={item}/>)
-
-    
-   useEffect(()=>{
-        setTotal(cartItems.reduce((counter, item) => counter += (item.price * item.quantityInCart), 0)
-        )
-    }, [cartItems]) 
-        
-  
+    let toRender = cartItems.map((item) => <CartCard handleTotal={handleTotal}  key={item.id} product={item}/>)
     return(
         <CartDiv>
            <CartHeader>
                <h1>Carrinho de Compras</h1>
-               <CloseButton onClick={close} src='assets/close-button.png'></CloseButton>
+               <CloseButton onClick={closeCart} src='assets/close-button.png'></CloseButton>
            </CartHeader>
            <CartContent>
                 {cartItems.length == 0? <p>Seu carrinho está vazio.</p> : toRender}
@@ -32,7 +27,7 @@ export default function ShoppingCart({cartItems, close, clean, remove}){
                     <p>R${total},00</p>
                 </div>
                 <div className='buttonsDiv'>
-                    <button onClick={clean}>Esvaziar carrinho</button>
+                    <button onClick={cleanShoppingCart}>Esvaziar carrinho</button>
                     <button>Comprar</button>
                 </div>
            </CartFooter>

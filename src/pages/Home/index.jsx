@@ -9,57 +9,63 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { useState } from 'react';
+import cartContext  from '../../context/cartContext.jsx';
 
+ 
 export default function Home(){
-
-    const [cartVisibility, setCartVisibility]= useState(false)
-    const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState([])
+  const [cartVisibility, setCartVisibility]= useState(false)
   
-    const addToCart = (item) =>{
-        if (!item.inShoppingCart){
-            item.inShoppingCart = true;
-            let newCart = [...cartItems, item]
-            setCartItems(newCart)
-        }
-        item.quantityInCart += 1;
-        toast.info(`${item.name} foi adicionada ao carrinho!`,{containerId: 'addToCart'})
-        
-        setCartVisibility(true)
-      }
-    
-      const removeFromCart = (product) =>{
-        product.inShoppingCart = false;
-        product.quantityInCart = 0;
-        let newCart = cartItems.filter((item) => item.id != product.id)
-        setCartItems(newCart)
-      }
-    
-      const cleanShoppingCart = () =>{
-        cartItems.forEach((item) => {
-          item.inShoppingCart = false
-          item.quantityInCart = 0;
-        })
-        setCartItems([])
-      }
-      const closeCart =() =>{
-        setCartVisibility(false)
-      }
-    
-      const displayCart = () =>{
-        setCartVisibility(true)
-      }
-    
-    return(
+  //Prob pass all this to shopping cart component
+  const addToCart = (item) =>{
+    if (!item.inShoppingCart){
+      item.inShoppingCart = true;
+      let newCart = [...cartItems, item]
+      setCartItems(newCart)
+  }
+  item.quantityInCart += 1;
+  toast.info(`${item.name} foi adicionada ao carrinho!`,{containerId: 'addToCart'})
+  
+  setCartVisibility(true)
+
+  }
+
+  const removeFromCart = (item) =>{
+    item.inShoppingCart = false;
+    item.quantityInCart = 0;
+    let newCart = cartItems.filter((product) => product.id != item.id)
+    setCartItems(newCart)
+  }
+
+  const displayCart = () =>{
+    setCartVisibility(true)
+  }
+
+  const closeCart = () =>{
+    setCartVisibility(false)
+  }
+
+  const cleanShoppingCart = () => {
+    cartItems.forEach((item) => {
+      item.inShoppingCart = false
+      item.quantityInCart = 0;
+    })
+    setCartItems([])
+  }
+  return(
+      <cartContext.Provider value={{cartItems, cleanShoppingCart, displayCart, closeCart, removeFromCart, addToCart }}>
         <HomePage >
-            {cartVisibility&&<ShoppingCart clean={cleanShoppingCart} remove={removeFromCart} close={closeCart} cartItems={cartItems}/>}
-            <Main cartVisibility={cartVisibility}>
-              <Menu displayCart={displayCart}/>
+            {cartVisibility&&<ShoppingCart />}
+            <Main >
+              <Menu />
               <Hero />
               <HowTo />
-              <Offers displayCart={displayCart} addToCart={addToCart}/>
+              <Offers />
             </Main>
         </HomePage>
-    )
+      </cartContext.Provider>
+      
+  )
    
   
 }
