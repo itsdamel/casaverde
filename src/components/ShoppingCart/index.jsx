@@ -5,13 +5,14 @@ import useTotal from '../../hooks/useTotal';
 import CartContext from '../../context/cartContext';
 
 export default function ShoppingCart(){
-    const { closeCart, cartItems, cleanShoppingCart } = useContext(CartContext)
-    let total = useTotal();
-    const handleTotal = () =>{
-        setTotal(cartItems.reduce((counter, item) => counter += (item.price * item.quantityInCart), 0)
-        )
-    }
-    let toRender = cartItems.map((item) => <CartCard handleTotal={handleTotal}  key={item.id} product={item}/>)
+    const { closeCart, cartItems, cleanShoppingCart} = useContext(CartContext)
+
+    let [total, setTotal] = useTotal();
+    
+    const handleTotal = () => setTotal(cartItems.reduce((counter, item) => counter += (item.price * item.quantityInCart), 0))
+
+    
+    let toRender = cartItems.map((item) => <CartCard handleTotal={handleTotal} key={item.id} product={item}/>)
     return(
         <CartDiv>
            <CartHeader>

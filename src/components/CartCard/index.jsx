@@ -1,28 +1,33 @@
 import { CartCardDiv, CartCardHeader, SmallPlantName, SmallPlantPrice, RemoveButton, Quantity } from './style';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { OfferInformation, OfferImg} from '../../pages/Home/PlantCard/style';
 import CartContext  from '../../context/cartContext';
 
-export function CartCard( {handleTotal, product} ){
-
+export function CartCard( {product, handleTotal} ){
+    
     const [quantity, setQuantity] = useState(product.quantityInCart);
-
     const { removeFromCart } = useContext(CartContext);
+   
     const handleRemove =() =>{
         removeFromCart(product)
     }
+
     const incrementQuantity = () => {
-
-        setQuantity(quantity + 1)
         product.quantityInCart += 1;
-        handleTotal()
 
+        setQuantity(product.quantityInCart)
+
+        handleTotal()
     }
+    
     const decrementQuantity = () => {
 
         setQuantity(quantity - 1)
+
         product.quantityInCart -= 1
-        product.quantityInCart == 0&&remove(product)
+    
+        product.quantityInCart == 0&&removeFromCart(product)
+
         handleTotal()
     }
 
@@ -44,7 +49,7 @@ export function CartCard( {handleTotal, product} ){
                 </OfferInformation>
             </CartCardHeader>
             <OfferInformation>
-                <span>x{product.quantityInCart} R${product.quantityInCart * product.price}</span>
+                <span>x{quantity} R${product.quantityInCart * product.price}</span>
 
                     
             </OfferInformation>

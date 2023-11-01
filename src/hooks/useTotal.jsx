@@ -10,5 +10,5 @@ export default function useTotal(){
         )
     }, [cartItems])
 
-    return total;
+    return [total, setTotal];
 }
