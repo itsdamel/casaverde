@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 export default function Hero(){
     return(
         <HeroSection>
-            <ToastContainer containerId={'newsletterAlert'} role="alert"  />
+            
             <ContentDiv>
                 <Paragraph> Sua casa com as</Paragraph>
                 <Cursive >melhores plantas</Cursive>

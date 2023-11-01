@@ -42,7 +42,6 @@ export default function Offers({addToCart}){
     
     return(
         <BaseSection id="Offers">
-            <ToastContainer role="alert" containerId={addToCart} />
             <OffersHeader>
                 <Paragraph>conheça nossas</Paragraph>
                 <Cursive >plantas</Cursive>
