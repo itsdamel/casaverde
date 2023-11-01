@@ -14,4 +14,6 @@ export const OffersHeader =styled.div`
     flex-direction: column;
     align-items: center;
 `
-
+export const Filter = styled.div`
+    
+`

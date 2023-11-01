@@ -28,6 +28,7 @@ export default function App() {
 
   const removeFromCart = (product) =>{
     product.inShoppingCart = false;
+    product.quantityInCart = 0;
     let newCart = cartItems.filter((item) => item.id != product.id)
     setCartItems(newCart)
   }
