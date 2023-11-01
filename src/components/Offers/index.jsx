@@ -53,7 +53,7 @@ export default function Offers({addToCart}){
                     <option value='cheaper' >Mais baratas</option>
                     <option value='expensive'>Mais caras</option>
                 </select>
-                {/* <input type="range" min={20} max={35} step='5'></input> */}
+                
             </Filter>
             <OfferContent>
 
