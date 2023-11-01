@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Card, CardInformation } from "../../shared/card";
-import { CardImg } from "../../shared/card";
-import { Cursive } from "../../shared/cursive";
-import { Paragraph } from "../../shared/paragraph";
+import { Card, CardInformation } from '../../../shared/card.jsx'
+import { CardImg } from '../../../shared/card.jsx';
+import { Cursive } from "../../../shared/cursive.jsx";
+import { Paragraph } from "../../../shared/paragraph.jsx";
 
 const OfferCard = styled(Card)`
     width: 379px;

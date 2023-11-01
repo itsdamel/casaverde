@@ -1,7 +1,7 @@
-import NewsLetter from "../NewsLetter";
+import NewsLetter from '../../../components/NewsLetter'
 import { HeroSection, BigPlant, ContentDiv, Oracle } from './style.jsx';
-import { Paragraph } from "../../shared/paragraph";
-import { Cursive } from "../../shared/cursive";
+import { Paragraph } from '../../../shared/paragraph.jsx'
+import { Cursive } from '../../../shared/cursive.jsx'
 import { ToastContainer } from "react-toastify";
 export default function Hero(){
     return(

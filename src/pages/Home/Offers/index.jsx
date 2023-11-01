@@ -1,11 +1,11 @@
-import { Cursive } from "../../shared/cursive";
-import { OfferContent, OffersHeader, Filter } from "./style";
-import { Paragraph } from "../../shared/paragraph";
-import {BaseSection} from '../../shared/BaseSection'
-import PlantCard from "../PlantCard";
-import { usePlant } from "../../hooks/usePlant";
+import { Cursive } from '../../../shared/cursive';
+import { OfferContent, OffersHeader, Filter } from './style';
+import { Paragraph } from '../../../shared/paragraph';
+import {BaseSection} from '../../../shared/BaseSection';
+import PlantCard from '../PlantCard';
+import { usePlant } from '../../../hooks/usePlant';
 import { ToastContainer } from 'react-toastify';
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 export default function Offers({addToCart}){
 
     let plants = usePlant();

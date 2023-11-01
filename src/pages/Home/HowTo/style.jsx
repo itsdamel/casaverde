@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Card } from "../../shared/card";
-import { Cursive } from "../../shared/cursive";
-import { CardInformation } from "../../shared/card";
+import { Card } from "../../../shared/card";
+import { Cursive } from "../../../shared/cursive";
+import { CardInformation } from "../../../shared/card";
 
 
 export const FlexDivWrapper = styled.div`
