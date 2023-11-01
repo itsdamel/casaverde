@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { OfferCard, PlantName, PlantPrice, OfferImg, OfferInformation } from "../PlantCard/style";
-import { CardHeader } from "../../shared/card";
-import { CloseButton } from "../ShoppingCart/style";
+import styled from 'styled-components';
+import { OfferCard, PlantName, PlantPrice, OfferImg, OfferInformation } from '../../pages/Home/PlantCard/style'
+import { CardHeader } from '../../shared/card';
+import { CloseButton } from '../ShoppingCart/style';
 
 export const CartCardDiv = styled(OfferCard)`
     width: 100%;
