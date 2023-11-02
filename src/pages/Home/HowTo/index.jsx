@@ -22,9 +22,9 @@ export default function HowTo(){
                         <BaseCursive fontSize='42px'>minha planta</BaseCursive>
                     </CardHeader>
                     <FlexDivWrapper>
-                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph  >Escolha suas plantas</BaseParagraph></FlexDiv>
-                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph >Faça seu pedido</BaseParagraph></FlexDiv>
-                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph >Aguarde na sua casa</BaseParagraph></FlexDiv>
+                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph fontSize='16px' >Escolha suas plantas</BaseParagraph></FlexDiv>
+                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph fontSize='16px'>Faça seu pedido</BaseParagraph></FlexDiv>
+                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph fontSize='16px'>Aguarde na sua casa</BaseParagraph></FlexDiv>
                     </FlexDivWrapper>
                 </CardInformation>
             </HowCard>

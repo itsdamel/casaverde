@@ -46,13 +46,14 @@ const BigPlant = styled.img`
 `
 const Oracle = styled.img`
     position: absolute;
-    top: -25%;
+    top: -20%;
     right: -15%;
     transform: rotate(20.536deg);
 
     @media(max-width: 600px){
-       top: -35%;
-       right: -30%;
+        right: -15%;
+        top: -12%;
+        transform: rotate(-20.536deg);
     }
     @media(max-width: 420px){
        top: -16%;

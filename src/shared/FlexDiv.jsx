@@ -4,13 +4,13 @@ import Paragraph  from "./Base/BaseParagraph"
 
 const FlexDiv = styled(BaseFlexDiv)`
     gap: 10px;
-
+    
     img{
-        width: 12%;
-        height: auto;
+        width: 32px;
+        
     }
-    @media screen and(max-width: 650px){
-        ${Paragraph}{font-size: '16px'}
+    @media screen and(max-width: 550px){
+        ${Paragraph}{font-size: '16px'};
     }   
 
 `
