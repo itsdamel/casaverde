@@ -10,13 +10,15 @@ export default function Newsletter(){
         e.preventDefault()
 
         if(validator.isEmail(email)){
-
-            await fetch(`http://localhost:3000/send-email?recipient=${email}`)
-            .catch(toast.error('Ops, algo deu errado com nosso servidor :('))  
-            toast.success(`Email enviado para ${email}`, {containerId: 'newsletterAlert'}) 
+            try{
+                await fetch(`http://localhost:3000/send-email?recipient=${email}`).then((response)=>{
+                    
+                    response.ok&&toast.success(`Email enviado para ${email}`) 
+                })
+            }catch(err){toast.error('Ops, algo deu errado com nosso servidor :(')}
         }else{
-            toast.error('Email inválido.', {containerId: 'newsletterAlert'})
-            toast.warning('meuemail@email.com é um exemplo de email válido.', {containerId: 'newsletterAlert'})
+            toast.error('Email inválido.')
+            toast.warning('meuemail@email.com é um exemplo de email válido.')
         }
         
     }
