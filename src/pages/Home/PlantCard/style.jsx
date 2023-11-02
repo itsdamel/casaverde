@@ -1,27 +1,27 @@
-import styled from "styled-components";
-import { Card, CardInformation } from '../../../shared/card.jsx'
-import { CardImg } from '../../../shared/card.jsx';
-import { Cursive } from "../../../shared/cursive.jsx";
-import { Paragraph } from "../../../shared/paragraph.jsx";
+import styled from 'styled-components';
+import Card from '../../../shared/Card/Card';
+import CardInformation from '../../../shared/Card/CardInformation'
+import CardImg from '../../../shared/Card/CardImg';
+import BaseCursive from '../../../shared/Base/BaseCursive';
+import BaseParagraph from '../../../shared/Base/BaseParagraph';
 
-const OfferCard = styled(Card)`
+export const OfferCard = styled(Card)`
     width: 379px;
     height: 200px;
-   
 `
-const OfferImg = styled(CardImg)`
+export const OfferImg = styled(CardImg)`
     width: 60%;
     height: 100%;
     background-position: left center; 
 
 `
-const OfferInformation = styled(CardInformation)`
+export const OfferInformation = styled(CardInformation)`
     width: 50%;
-    align-items: left;
+    align-items: flex-start;
     padding-left: 5px;
     
 `
-const PlantName = styled(Cursive)`
+export const PlantName = styled(BaseCursive)`
     font-size: 32px;
     @media(max-width: 440px){
         font-size: 20px;
@@ -29,18 +29,15 @@ const PlantName = styled(Cursive)`
     }
 `
 
-const PlantPrice = styled(Paragraph)`
+export const PlantPrice = styled(BaseParagraph)`
     font-size: 16px;
 
 `
-const BuyButton = styled.button`
+export const BuyButton = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: none;
     width: fit-content;
-    display: flex;
-    gap: 10px;
-    align-items: center;
     color: #FFCB47;
     font-weight: bold;
 
@@ -49,4 +46,3 @@ const BuyButton = styled.button`
     }
 
 `
-export{OfferCard, OfferImg, OfferInformation, BuyButton, PlantName, PlantPrice}

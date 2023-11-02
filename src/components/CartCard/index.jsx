@@ -1,6 +1,9 @@
+//Styled components
 import { CartCardDiv, CartCardHeader, SmallPlantName, SmallPlantPrice, RemoveButton, Quantity } from './style';
-import { useState, useContext, useEffect } from 'react';
 import { OfferInformation, OfferImg} from '../../pages/Home/PlantCard/style';
+//hooks
+import { useState, useContext} from 'react';
+//context
 import CartContext  from '../../context/cartContext';
 
 export function CartCard( {product, handleTotal} ){
@@ -37,7 +40,7 @@ export function CartCard( {product, handleTotal} ){
                 <OfferImg backgroundpath={'assets/' + product.img}>
 
                 </OfferImg>
-                <OfferInformation>
+                <OfferInformation >
                     <SmallPlantName>{product.name}</SmallPlantName>
                     <SmallPlantPrice>R${product.price},00</SmallPlantPrice>
                     <Quantity>
@@ -48,8 +51,8 @@ export function CartCard( {product, handleTotal} ){
                     
                 </OfferInformation>
             </CartCardHeader>
-            <OfferInformation>
-                <span>x{quantity} R${product.quantityInCart * product.price}</span>
+            <OfferInformation style={{width: '20%'}} >
+                <span style={{fontSize: '14px'}}>x{quantity} R${product.quantityInCart * product.price}</span>
 
                     
             </OfferInformation>

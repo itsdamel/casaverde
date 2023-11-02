@@ -1,15 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import BaseFlexDiv from '../../shared/Base/BaseFlexDiv';
 
-export const HomePage = styled.div`
-    display: flex;
+export const HomePage = styled(BaseFlexDiv)`
     flex-direction: column;
-    align-items: center;
-    background-color: #ffffffc5;
+    background-color: ${ props => props.cartVisible ? '#5B5F5D' : '#ffffffc5'};
 
 `
 
-export const Main = styled.main`
-    ${(props) => props.cartVisibility && 'filter: blur(5px) brightness(45%); ' };
+export const Main = styled.div`
+    ${props => props.cartVisible && 'filter: blur(5px) brightness(20%); ' };
 `
 
 
