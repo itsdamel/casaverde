@@ -1,7 +1,13 @@
-import { Paragraph } from '../../../shared/paragraph';
-import { Cursive } from '../../../shared/cursive';
-import { CardImg, CardInformation, FlexDiv, CardHeader } from '../../../shared/card';
-import { BaseSection } from '../../../shared/BaseSection';
+//Styled components
+import BaseParagraph from '../../../shared/Base/BaseParagraph';
+import BaseCursive from '../../../shared/Base/BaseCursive';
+import CardImg from '../../../shared/Card/CardImg';
+import CardInformation from '../../../shared/Card/CardInformation';
+import CardHeader from '../../../shared/Card/CardHeader';
+import FlexDiv from '../../../shared/FlexDiv';
+import BaseSection from '../../../shared/Base/BaseSection';
+
+//dedicated styles
 import { HowCard, FlexDivWrapper } from './style';
 
 export default function HowTo(){
@@ -12,13 +18,13 @@ export default function HowTo(){
                 </CardImg>
                 <CardInformation>
                     <CardHeader>
-                        <Paragraph>Como conseguir</Paragraph>
-                        <Cursive fontSize='42px'>minha planta</Cursive>
+                        <BaseParagraph>Como conseguir</BaseParagraph>
+                        <BaseCursive fontSize='42px'>minha planta</BaseCursive>
                     </CardHeader>
                     <FlexDivWrapper>
-                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <Paragraph  >Escolha suas plantas</Paragraph></FlexDiv>
-                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <Paragraph >Faça seu pedido</Paragraph></FlexDiv>
-                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <Paragraph >Aguarde na sua casa</Paragraph></FlexDiv>
+                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph  >Escolha suas plantas</BaseParagraph></FlexDiv>
+                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph >Faça seu pedido</BaseParagraph></FlexDiv>
+                        <FlexDiv><img src='assets/yellow-circle.svg' alt=''></img> <BaseParagraph >Aguarde na sua casa</BaseParagraph></FlexDiv>
                     </FlexDivWrapper>
                 </CardInformation>
             </HowCard>

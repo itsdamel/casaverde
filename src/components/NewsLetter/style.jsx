@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const StyledNewsletter = styled.form`
+export const StyledNewsletter = styled.form`
     width: 100%;
     height: 65px;
     display: flex;
@@ -37,9 +37,6 @@ const StyledNewsletter = styled.form`
     button:hover{
         background-color: #ecab00;
     }
-    @media screen and (max-width: 440px){
-
-    }
+  
 `;
 
-export { StyledNewsletter }

@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { Card } from "../../../shared/card";
-import { Cursive } from "../../../shared/cursive";
-import { CardInformation } from "../../../shared/card";
+import styled from 'styled-components';
+import Card from '../../../shared/Card/Card';
+import BaseCursive from '../../../shared/Base/BaseCursive';
+import CardInformation from '../../../shared/Card/Card';
+import BaseFlexDiv from '../../../shared/Base/BaseFlexDiv';
 
-
-export const FlexDivWrapper = styled.div`
-    display: flex;
+export const FlexDivWrapper = styled(BaseFlexDiv)`
+    align-items: flex-start;
     flex-direction: column;
     gap: 20px;
 
@@ -15,7 +15,7 @@ export const FlexDivWrapper = styled.div`
 `
 
 export const HowCard = styled(Card)`
-    ${Cursive}{
+    ${BaseCursive}{
         font-size: 42px;
     }
     ${CardInformation}{
@@ -33,7 +33,7 @@ export const HowCard = styled(Card)`
 
     @media screen and (max-width: 650px){
         flex-direction: column;
-        ${Cursive}{
+        ${BaseCursive}{
             font-size: 30px;
         }
     }

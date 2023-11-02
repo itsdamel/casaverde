@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Cursive = styled.p`
+const BaseCursive = styled.p`
     font-family: 'Elsie Swash Caps', serif;
     font-size: 82px;
     font-weight: 900;
@@ -8,3 +8,4 @@ export const Cursive = styled.p`
         font-size: 15vw;
     }
 `
+export default BaseCursive;

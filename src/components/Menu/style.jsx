@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BaseFlexDiv from '../../shared/Base/BaseFlexDiv';
 
 const Header = styled.header`
     display: flex;
@@ -20,8 +21,7 @@ const Header = styled.header`
    
 `;
 
-const Logo = styled.div`
-    display: flex;
+const Logo = styled(BaseFlexDiv)`
 
     gap: 2px;
 
@@ -35,10 +35,14 @@ const Nav = styled.nav`
     display: flex;
     gap: 10px;
     
-   
+    
     a{
         text-decoration: none;
         font-weight: 500;
+    }
+
+    @media(max-width:350px){
+        font-size: 12px;
     }
 
 `;

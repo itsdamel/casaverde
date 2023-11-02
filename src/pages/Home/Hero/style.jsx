@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import BaseFlexDiv from "../../../shared/Base/BaseFlexDiv";
 
 const HeroSection = styled.section`
     align-items: end;
@@ -15,10 +16,11 @@ const HeroSection = styled.section`
 
 
 `
-const ContentDiv= styled.div`
-    display:flex;
+const ContentDiv= styled(BaseFlexDiv)`
+
     z-index: 1;
     height: 100%;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: center;
     gap: 10px;

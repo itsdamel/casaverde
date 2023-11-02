@@ -1,11 +1,15 @@
-import { Cursive } from '../../../shared/cursive';
-import { OfferContent, OffersHeader, Filter } from './style';
-import { Paragraph } from '../../../shared/paragraph';
-import {BaseSection} from '../../../shared/BaseSection';
+//Styled components
+import BaseCursive from '../../../shared/Base/BaseCursive';
+import { OfferContent, OffersHeader} from './style';
+import BaseParagraph  from '../../../shared/Base/BaseParagraph';
+import BaseSection from '../../../shared/Base/BaseSection';
 import PlantCard from '../PlantCard';
+import BaseFlexDiv from '../../../shared/Base/BaseFlexDiv';
+//hooks
 import { usePlant } from '../../../hooks/usePlant';
-import { ToastContainer } from 'react-toastify';
 import { useRef, useState } from 'react';
+
+
 export default function Offers({addToCart}){
 
     let plants = usePlant();
@@ -28,11 +32,11 @@ export default function Offers({addToCart}){
         switch(selected){
             case 'cheaper':
                 sortedArray = plants.sort(fromCheapest);
-                console.log('cheap')
+                
                 break;
             case 'expensive':
                 sortedArray = plants.sort(fromExpensive)
-                console.log('expensive')
+                
                 
             break;
         }
@@ -43,17 +47,17 @@ export default function Offers({addToCart}){
     return(
         <BaseSection id="Offers">
             <OffersHeader>
-                <Paragraph>conheça nossas</Paragraph>
-                <Cursive >plantas</Cursive>
+                <BaseParagraph>conheça nossas</BaseParagraph>
+                <BaseCursive >plantas</BaseCursive>
             </OffersHeader>
-            <Filter>
+            <BaseFlexDiv>
                 <select defaultValue={'header'} onChange={handleFilter} ref={filter} placeholder="Selecione">
                     <option value='header' hidden>Filtre nossos produtos</option>
                     <option value='cheaper' >Mais baratas</option>
                     <option value='expensive'>Mais caras</option>
                 </select>
-                {/* <input type="range" min={20} max={35} step='5'></input> */}
-            </Filter>
+    
+            </BaseFlexDiv>
             <OfferContent>
 
                 {filterOn ? toRender.map((plant) => <PlantCard key={plant.id} plant={plant} addToCart={addToCart} />) : plants.map((plant) => <PlantCard key={plant.id} plant={plant} addToCart={addToCart} />)}
