@@ -3,7 +3,6 @@ import BaseFlexDiv from '../../../shared/Base/BaseFlexDiv';
 
 export const OfferContent = styled(BaseFlexDiv)`
     gap: 20px;
-    border: 2px solid red;
     width: 90vw;
     justify-content: center;
     flex-wrap: wrap;
