@@ -6,12 +6,15 @@ import BaseFlexDiv from '../../../shared/Base/BaseFlexDiv';
 import CardHeader from '../../../shared/Card/CardHeader';
 
 export const FlexDivWrapper = styled(BaseFlexDiv)`
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
     @media screen and (max-width: 650px){
-        gap: 10px;
-        
-        justify-content: center;
+        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
     }
     @media screen and (max-width: 500px){
         justify-content: flex-start;
