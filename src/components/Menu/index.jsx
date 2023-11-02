@@ -1,6 +1,9 @@
-import { useContext } from 'react';
 import { Header, Logo, Nav } from './style.jsx';
+//hooks
+import { useContext } from 'react';
+//context
 import CartContext from '../../context/cartContext.jsx';
+
 
 export default function Menu(){
     const {displayCart} = useContext(CartContext)

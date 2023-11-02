@@ -1,8 +1,12 @@
 import { CartDiv, CartHeader, CloseButton, CartContent, CartFooter } from './style'
 import { CartCard } from '../CartCard';
+//hooks
 import { useContext } from 'react';
 import useTotal from '../../hooks/useTotal';
+
+//context
 import CartContext from '../../context/cartContext';
+
 
 export default function ShoppingCart(){
     const { closeCart, cartItems, cleanShoppingCart} = useContext(CartContext)
@@ -16,7 +20,7 @@ export default function ShoppingCart(){
     return(
         <CartDiv>
            <CartHeader>
-               <h1>Carrinho de Compras</h1>
+               <h3>Carrinho de Compras</h3>
                <CloseButton onClick={closeCart} src='assets/close-button.png'></CloseButton>
            </CartHeader>
            <CartContent>

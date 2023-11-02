@@ -63,10 +63,10 @@ export default function Home(){
   return(
       <cartContext.Provider value={{cartItems, cleanShoppingCart, displayCart, closeCart, removeFromCart, addToCart }}>
   
-        <HomePage >
+        <HomePage cartVisible={cartVisibility}>
             <ToastContainer role='alert'/>
             {cartVisibility&&<ShoppingCart />}
-            <Main >
+            <Main cartVisible={cartVisibility} >
               <Menu />
               <Hero />
               <HowTo />

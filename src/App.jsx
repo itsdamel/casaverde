@@ -13,3 +13,4 @@ export default function App() {
 
 
 
+//Updating paths of styled components, stop in cartacard
