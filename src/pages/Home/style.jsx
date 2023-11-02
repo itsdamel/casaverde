@@ -7,8 +7,9 @@ export const HomePage = styled(BaseFlexDiv)`
 
 `
 
-export const Main = styled.div`
+export const Main = styled(HomePage)`
     ${props => props.cartVisible && 'filter: blur(5px) brightness(20%); ' };
+    
 `
 
 

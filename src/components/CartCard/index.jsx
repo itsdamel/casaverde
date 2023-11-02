@@ -41,8 +41,11 @@ export function CartCard( {product, handleTotal} ){
 
                 </OfferImg>
                 <OfferInformation >
+
                     <SmallPlantName>{product.name}</SmallPlantName>
+
                     <SmallPlantPrice>R${product.price},00</SmallPlantPrice>
+
                     <Quantity>
                         <button onClick={decrementQuantity}>-</button>
                             <span>{quantity}</span>
@@ -51,13 +54,12 @@ export function CartCard( {product, handleTotal} ){
                     
                 </OfferInformation>
             </CartCardHeader>
+            
             <OfferInformation style={{width: '20%'}} >
                 <span style={{fontSize: '14px'}}>x{quantity} R${product.quantityInCart * product.price}</span>
-
-                    
             </OfferInformation>
-            <RemoveButton onClick={handleRemove} src='assets/remove.png' alt='remove'
-            />
+
+            <RemoveButton onClick={handleRemove} src='assets/remove.png' alt='remove'/>
        </CartCardDiv>
     )
 }
