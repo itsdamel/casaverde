@@ -23,16 +23,20 @@ export const usePlant = () => {
     const [plants, setPlants] = useState([])
     
     useEffect(()=>{
-        const getPlants = async() =>{
-            let response = await fetch('http://localhost:3333/plants')
-            let responseJson = await response.json()
-            setPlants(responseJson.map((plant)=> createPlantObject(plant)))
+        async function fetchPlants(){
+          try {
+            const response = await fetch('https://casaverde-backend-itsdamel.onrender.com/get-plants');
+            !response.ok&&console.log(`Failed to fetch data: ${response.status}`);
+            const responseJson = await response.json();
+            const plantObjects = await responseJson.plants.map((response) => createPlantObject(response));
+            setPlants(plantObjects);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
         }
-        
-
-    getPlants()
     
-    }, [])
-
+        fetchPlants();
+    }, []); 
+    
     return plants;
 }
