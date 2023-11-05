@@ -26,8 +26,10 @@ export const usePlant = () => {
         async function fetchPlants(){
           try {
             const response = await fetch('https://casaverde-backend-itsdamel.onrender.com/get-plants');
+           
             !response.ok&&console.log(`Failed to fetch data: ${response.status}`);
             const responseJson = await response.json();
+            
             const plantObjects = await responseJson.plants.map((response) => createPlantObject(response));
             setPlants(plantObjects);
           } catch (error) {

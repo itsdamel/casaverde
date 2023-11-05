@@ -9,10 +9,10 @@ import BaseFlexDiv from '../../../shared/Base/BaseFlexDiv';
 import { usePlant } from '../../../hooks/usePlant';
 import { useRef, useState } from 'react';
 
-
 export default function Offers({addToCart}){
 
     let plants = usePlant();
+    
     const filter = useRef();
     let filterOn = false;
     const [toRender, setToRender] = useState(null)
@@ -59,7 +59,6 @@ export default function Offers({addToCart}){
     
             </BaseFlexDiv>
             <OfferContent>
-
                 {filterOn ? toRender.map((plant) => <PlantCard key={plant.id} plant={plant} addToCart={addToCart} />) : plants.map((plant) => <PlantCard key={plant.id} plant={plant} addToCart={addToCart} />)}
             </OfferContent>
         </BaseSection>
