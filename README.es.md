@@ -6,7 +6,7 @@
 <div style="text-align: center">
     <h2>PREVIEW</h2>
     <img src='public/assets/casaverde-preview.png' alt='deployed preview' target='_blank'></img>
-    <a style='text-decoration: none; text-transform: uppercase' href='https://6547990862a9b24d1edf6468--willowy-sopapillas-7e536a.netlify.app/#' target='_blank'>SEE LIVE 🚀</a>
+    <h1><a style='text-decoration: none; text-transform: uppercase' href='https://6547990862a9b24d1edf6468--willowy-sopapillas-7e536a.netlify.app/#' target='_blank'>SEE LIVE 🚀</a></h1>
 </div>
 
 <div style="text-align: center">
