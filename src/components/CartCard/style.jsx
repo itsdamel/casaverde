@@ -1,40 +1,41 @@
-import styled from "styled-components";
-import { OfferCard, PlantName, PlantPrice, OfferImg, OfferInformation } from "../PlantCard/style";
-import { CardHeader } from "../../shared/card";
-import { CloseButton } from "../ShoppingCart/style";
+import styled from 'styled-components';
+import { OfferCard, PlantName, PlantPrice, OfferImg, OfferInformation } from '../../pages/Home/PlantCard/style'
+import  CardHeader from '../../shared/Card/CardHeader';
+import { CloseButton } from '../ShoppingCart/style';
+import BaseFlexDiv from '../../shared/Base/BaseFlexDiv';
 
 export const CartCardDiv = styled(OfferCard)`
     width: 100%;
-    
     box-shadow: none;
-    max-height: 120px;
-    border-bottom: 2px solid grey;
-    
+    min-height: 25%;
+    justify-content: space-between;
+    border-bottom: 1px dashed gray;
+    align-items: flex-start;
     ${OfferInformation}{
-        width: 45%;
+        width: 50%;
     }
 
 `
 export const RemoveButton =styled(CloseButton)`
     width: fit-content;
-    
+   
 `
 export const CartCardHeader = styled(CardHeader)`
     display: flex;
     height: 100%;
-    width: 100%;
+    width: fit-content;
+
     ${OfferImg}{
         width: 150px;
         height: 100%;
+
     }
    
 `
-export const Quantity = styled.div`
+export const Quantity = styled(BaseFlexDiv)`
     width: fit-content;
     border: 2px solid green;
     height: fit-content;
-    display: flex;
-    align-items: center;
     gap: 10px;
     
     button{
@@ -50,9 +51,7 @@ export const Quantity = styled.div`
         background-color: #b39500;
     }
 
-    span{
-        font-size: 12px;
-    }
+  
 `
 export const SmallPlantName = styled(PlantName)`
     font-size: 18px;

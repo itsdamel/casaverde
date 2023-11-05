@@ -1,7 +1,9 @@
+import CartContext from '../../../context/cartContext';
 import {OfferCard, OfferImg, OfferInformation, PlantPrice, BuyButton, PlantName} from './style';
+import { useContext } from 'react';
 
-export default function PlantCard({plant, addToCart}){
-  
+export default function PlantCard({plant}){
+    const { addToCart } = useContext(CartContext)
     const handleCart = () => addToCart(plant);
      
     return(

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BaseSection = styled.section`
+const BaseSection = styled.section`
     width: 100%;
     display: flex;
     margin-bottom: 30px;
@@ -8,3 +8,5 @@ export const BaseSection = styled.section`
     align-items: center;
     
 `
+
+export default BaseSection;

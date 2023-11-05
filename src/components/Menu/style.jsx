@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import BaseFlexDiv from '../../shared/Base/BaseFlexDiv';
 
 const Header = styled.header`
     display: flex;
-    position: static;
+    position: relative;
     z-index: 2;
     margin-bottom: 20px;
     justify-content: space-between;
@@ -20,8 +21,7 @@ const Header = styled.header`
    
 `;
 
-const Logo = styled.div`
-    display: flex;
+const Logo = styled(BaseFlexDiv)`
 
     gap: 2px;
 
@@ -34,10 +34,15 @@ const Nav = styled.nav`
     text-decoration: none;
     display: flex;
     gap: 10px;
-   
+    
+    
     a{
         text-decoration: none;
         font-weight: 500;
+    }
+
+    @media(max-width:350px){
+        font-size: 12px;
     }
 
 `;

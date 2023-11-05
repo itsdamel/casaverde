@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Paragraph = styled.p`
+const BaseParagraph = styled.p`
     line-height: 26px;
     font-size: ${ props => props.fontSize || '22px'};
     opacity: 0.5;
@@ -9,3 +9,5 @@ export const Paragraph = styled.p`
         line-height: 20px;
     }
 `;
+
+export default BaseParagraph;
