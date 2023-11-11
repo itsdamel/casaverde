@@ -56,13 +56,7 @@ export default function Offers({addToCart}){
                     <option value='cheaper' >Mais baratas</option>
                     <option value='expensive'>Mais caras</option>
                 </select>
-<<<<<<< HEAD:src/components/Offers/index.jsx
-                
-            </Filter>
-=======
-    
             </BaseFlexDiv>
->>>>>>> 798794b9e72801a76c90a390806ea3858676585e:src/pages/Home/Offers/index.jsx
             <OfferContent>
                 {filterOn ? toRender.map((plant) => <PlantCard key={plant.id} plant={plant} addToCart={addToCart} />) : plants.map((plant) => <PlantCard key={plant.id} plant={plant} addToCart={addToCart} />)}
             </OfferContent>

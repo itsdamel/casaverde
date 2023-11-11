@@ -21,7 +21,8 @@ import cartContext  from '../../context/cartContext.jsx';
 export default function Home(){
   const [cartItems, setCartItems] = useState([]);
   const [cartVisibility, setCartVisibility]= useState(false);
-  
+ 
+  window.onload = ()=> window.alert('Due to our choice to use a free hosting server, the loading time for the offer sections may be prolonged. If it takes more than one minute, please attempt to reload the page.')
 
   const addToCart = (item) =>{
     if (!item.inShoppingCart){
